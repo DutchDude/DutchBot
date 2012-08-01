@@ -27,7 +27,7 @@ author. See http://github.com/DutchDude/DutchBot.git
 
   <groupId>cd.what.DutchBot</groupId>
   <artifactId>DutchBot</artifactId>
-  <version>SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>DutchBot</name>
@@ -51,6 +51,7 @@ author. See http://github.com/DutchDude/DutchBot.git
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
         <configuration>
           <archive>
             <manifest>
