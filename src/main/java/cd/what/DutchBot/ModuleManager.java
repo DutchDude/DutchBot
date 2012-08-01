@@ -62,8 +62,7 @@ public final class ModuleManager {
 	/**
 	 * Attempts to load a certain module
 	 * 
-	 * @param Modulename
-	 *            , must be correct Class name
+	 * @param Modulename must be correct Class name
 	 * 
 	 * @throws SecurityException
 	 * @throws NoSuchMethodException

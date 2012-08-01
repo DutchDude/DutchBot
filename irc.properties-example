@@ -70,6 +70,10 @@ irc.channel.dutchdude.modules Quit
 ##############
 modules.namespace cd.what.DutchBot.Modules
 modules.sudo.password foobar
+#modules.lastfm.apikey xyz
+#modules.lastfm.prefix .
+#modules.lastfm.cooldowntime
+
 #########################
 #globally loaded modules#
 #########################
