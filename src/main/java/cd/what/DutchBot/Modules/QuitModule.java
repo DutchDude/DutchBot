@@ -64,7 +64,7 @@ public class QuitModule extends ModuleAbstract implements IChannelMessageEvent,
 	public void notifyChannelMessageEvent(String channel, String sender,
 			String login, String hostname, String message) {
 		if (message.startsWith(this.getBot().getCommandPrefix() + "quit"))
-			this.run(channel, sender, login, hostname, message);
+			this.run(channel, sender, login, hostname, message.substring(1));
 		if(message.startsWith(this.bot.getCommandPrefix() + "restart")) 
 			this.run(channel, sender, login, hostname, message.substring(1));
 	}
