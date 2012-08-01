@@ -74,7 +74,8 @@ public class LastfmModule extends ModuleAbstract implements
 	private static final String HELP_RESPONSE = "Use the command ?setuser <lastfmusername> to associate your last.fm account with this now playing bot. "
 			+ " You can use the other commands ?np (or ?np <lastfmnick>) to display the currently playing track, and ?compare <otheruser> to get your musical "
 			+ "compatibility with that other user. ?setuser also works via PM. There is a cooldown of ## seconds on ?np and ?compare";
-	private static final String HELP_RESPONSE2 = "You can make the bot ignore you in ?compare by using the ?ignoreme command";
+	private static final String HELP_RESPONSE2 = "You can make the bot ignore you in ?compare by using the ?ignoreme command. " +
+			"Source code of the bot is available at https://github.com/DutchDude/DutchBot.git";
 
 	private static final String SELECT_USERNAME_QUERY = "SELECT lastfmusername FROM lastfm WHERE ident = ? AND hostname = ? LIMIT 1";
 	private static final String INSERT_USERNAME_QUERY = "INSERT INTO lastfm (ident, hostname, lastfmusername) VALUES (?, ?, ?)";
