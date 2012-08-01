@@ -68,7 +68,7 @@ irc.channel.dutchdude.modules Quit
 ##############
 #moduleconfig#
 ##############
-modules.namespace cd.what.DutchBot
+modules.namespace cd.what.DutchBot.Modules
 modules.sudo.password foobar
 #########################
 #globally loaded modules#
