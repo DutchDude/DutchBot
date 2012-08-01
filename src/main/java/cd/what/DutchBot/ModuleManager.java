@@ -80,8 +80,8 @@ public final class ModuleManager {
 		@SuppressWarnings("unchecked")
 		Class<ModuleAbstract> o = (Class<ModuleAbstract>) Class.forName(bot
 				.getConfig().getString("modules.namespace",
-						"cd.what.DutchBot.Modules")
-				+ module);
+						"cd.what.DutchBot.Modules") 
+				+ "." + module);
 		Class<?>[] args = new Class[1];
 		args[0] = DutchBot.class;
 		ModuleAbstract m = o.getConstructor(args).newInstance(bot);
