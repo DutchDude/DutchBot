@@ -1,0 +1,59 @@
+#############
+# README    #
+#############
+# Syntax:
+#properties are made of dotted words. 
+# you can then type the value after the property name
+# or separate them by a = 
+# eg:
+# example.property 123
+# example.property = 123
+# These are equivalent.
+# Lists are made by separating the values by 
+# COMMAS, not spaces. 
+# example.property foo,bar,baz
+#
+#
+##############
+#SERVER INFOS#
+##############
+server.host irc.what-network.net
+server.port 6667
+server.password 
+irc.nickservpass NickServPass
+irc.nick DutchBot 
+######
+# DB #
+######
+db.host rded.nl
+db.database DutchBot
+db.username	dutchbot
+db.password foobar
+#############
+#Drone infos#
+#############
+drone.username DutchDude
+drone.password MyVerySekritIrcKey
+drone.channels #joins,#these,#channels
+##############
+#IRC channels#
+##############
+irc.channel.dutchdude.key channelkey
+irc.channel.dutchdude.chanservinvite yes
+irc.channel.dutchdude.modules Quit
+##############
+#moduleconfig#
+##############
+modules.sudo.password foobar
+modules.watch.channels #what.cd-invites 
+modules.watch.reportchannel
+#########################
+#globally loaded modules#
+#########################
+# Useful for PrivateMessage events and Invite Events
+bot.globalmodules sudo invite
+#people to complain to
+bot.owner DutchDude
+bot.logchan #DutchDude
+#access list
+acl.200779@DutchDude.DeltaTeam.what.cd  100 
