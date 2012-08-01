@@ -15,33 +15,8 @@
  * along with DutchBot.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @author DutchDude
- * @copyright Â© 2012, DutchDude
+ * @copyright © 2012, DutchDude
  * 
  * You are encouraged to send any changes you make to this code to the
  * author. See http://github.com/DutchDude/DutchBot.git
  */
-package cd.what.DutchBot.Events;
-
-/**
- * Event called on channel kicks
- * 
- * @author DutchDude
- *
- */
-public interface IChannelKickEvent {
-
-	/**
-	 * Notifies of a channel kick
-	 * 
-	 * @param channel channel in which it happened
-	 * @param kickerNick nick of person kicking 
-	 * @param kickerLogin login of person kicking 
-	 * @param kickerHostname hostname of person kicking 
-	 * @param recipientNick nick being kicked
-	 * @param reason kick reason
-	 */
-	void notifyChannelKickEvent(String channel, String kickerNick,
-			String kickerLogin, String kickerHostname, String recipientNick,
-			String reason);
-
-}
