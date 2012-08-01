@@ -25,9 +25,9 @@ irc.nick DutchBot
 ######
 # DB #
 ######
-db.host rded.nl
+db.host dbhost.nl
 db.database DutchBot
-db.username	dutchbot
+db.username dutchbot
 db.password foobar
 #############
 #Drone infos#
@@ -44,16 +44,15 @@ irc.channel.dutchdude.modules Quit
 ##############
 #moduleconfig#
 ##############
+modules.namespace cd.what.DutchBot
 modules.sudo.password foobar
-modules.watch.channels #what.cd-invites 
-modules.watch.reportchannel
 #########################
 #globally loaded modules#
 #########################
-# Useful for PrivateMessage events and Invite Events
 bot.globalmodules sudo invite
 #people to complain to
 bot.owner DutchDude
 bot.logchan #DutchDude
 #access list
-acl.200779@DutchDude.DeltaTeam.what.cd  100 
+acl.channel.dutch = 10
+acl.200779@DutchDude.buildteam.what.cd  100 
