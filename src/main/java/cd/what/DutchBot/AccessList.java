@@ -65,11 +65,13 @@ public final class AccessList {
 	public static void addUser(String login, String hostname, Privileges level) {
 
 		String user = login + "@" + hostname;
+        user = user.toLowerCase();
+
 		// make sure to update the alias:
 		if (aliasList.containsKey(user)) {
 			user = aliasList.get(user);
 		}
-		accessList.put(user.toLowerCase(), level);
+		accessList.put(user, level);
 		System.out.println("Registered " + user);
 		// update config
 		if (config.containsKey("acl.user." + user))
@@ -97,7 +99,9 @@ public final class AccessList {
 			throws AccessListException {
 
 		String originalUser = originalLogin + "@" + originalHostname;
+        originalUser = originalUser.toLowerCase();
 		String aliasUser = aliasLogin + "@" + aliasHostname;
+        aliasUser = aliasUser.toLowerCase();
 
 		if (!accessList.containsKey(originalUser))
 			throw new AccessListException(
@@ -120,6 +124,9 @@ public final class AccessList {
 	 */
 	public static void delUser(String login, String hostname)
 			throws AccessListException {
+        login = login.toLowerCase();
+        hostname = hostname.toLowerCase();
+
 		accessList.remove(login + "@" + hostname);
 		config.clearProperty(login + "@" + hostname);
 		try {
@@ -147,14 +154,14 @@ public final class AccessList {
 		Iterator keys = config.getKeys("acl.user");
 		while (keys.hasNext()) {
 			String key = keys.next().toString();
-			String host = key.substring("acl.user.".length());
+			String host = key.substring("acl.user.".length()).toLowerCase();
 			Privileges axx = Privileges.lookup((config.getInt(key)));
 			accessList.put(host, axx);
 		}
 		keys = config.getKeys("acl.channel");
 		while (keys.hasNext()) {
 			String key = keys.next().toString();
-			String channel = "#" + key.substring("acl.channel.".length());
+			String channel = "#" + key.substring("acl.channel.".length()).toLowerCase();
 			Privileges axx = Privileges.lookup(config.getInt(key));
 			channelAccessList.put(channel, axx);
 		}
@@ -163,7 +170,7 @@ public final class AccessList {
 		while (keys.hasNext()) {
 			String key = keys.next().toString();
 			String host = String.copyValueOf(key.toCharArray(), 6, key
-					.toString().length() - 6);
+					.toString().length() - 6).toLowerCase();
 			aliasList.put(host, config.getString(key));
 		}
 
@@ -200,6 +207,7 @@ public final class AccessList {
 	public static boolean isChannelAllowed(String channel,
 			Privileges minimumAccess) {
 		Privileges defaultAccess = Privileges.USER;
+        channel = channel.toLowerCase();
 
 		if (channelAccessList.containsKey(channel))
 			defaultAccess = channelAccessList.get(channel);
@@ -212,7 +220,7 @@ public final class AccessList {
 
 	public static boolean isKnown(String login, String host) {
 		String user = login + "@" + host;
-		if (accessList.containsKey(user))
+        if (accessList.containsKey(user.toLowerCase()))
 			return true;
 		else
 			return false;
