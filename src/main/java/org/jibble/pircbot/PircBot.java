@@ -1237,6 +1237,7 @@ public abstract class PircBot implements ReplyConstants {
 				prefixes.add("@");
 				prefixes.add("+");
 				prefixes.add("%");
+                prefixes.add("&");
 				prefixes.add("~");
 
 				if (prefixes.contains(nick.substring(0, 1)))
